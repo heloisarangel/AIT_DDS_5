@@ -7,43 +7,71 @@
 </head>
 <style>
     body {
-        background-color: rgb(236, 153, 153);
-
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    div{
+        background-color: beige;
     }
 
     .login-container {
         text-align: center;
         padding-top: 300px;
         margin-left: 5%;
-        border: 50px;
+        border: 30px, red, ;
+
     }
+
+    button {
+        width: 180px;
+        height: 22px;
+    }
+
+    .email {
+        width: 100%;
+    
+    }
+
+    .senha {
+        width: 88%;
+    }
+
+    h1 {
+        color: rgb(38, 100, 235);
+
+    }
+
     
 </style>
 
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <hrsize="3" width="10%" >
-        <form>
-            <div class="email">
-                <label for="email">Seu email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+        <hrsize="3" width="10%">
+            <form>
+                <div class="email">
+                    <div><label for="email">Seu email:</label></div>
+                    <div><input type="email" id="email" name="email" required></div>
+                    <div>ㅤ</div>
 
-            <div class="password">
-                <label for="password">Sua senha:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
+                </div>
+
+                <div class="password">
+                    <div><label for="password">Sua senha:</label></div>
+                    <div><input type="password" id="password" name="password" required></div>
+                    <div>ㅤ</div>
+                </div>
 
 
-            <div class="checkbox">
-                <input type="checkbox" id="remember">
-                <label for="remember">Manter-me logado</label>
-            </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Manter-me logado</label>
+                </div>
 
-            <button type="submit">Entrar</button>
-        </form>
-        <p>Ainda não tem conta? <a href="#">Cadastre-se</a></p>
+                <button type="submit">Entrar<div>ㅤ</div></button>
+
+            </form>
+            <p>Ainda não tem conta? <a href="#">Cadastre-se</a></p>
+            <div>ㅤ</div>
     </div>
 
     <script src="script.js"></script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Horários</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Horários das Aulas</h1>
+    <table id="tabela-horarios">
+        <thead>
+            <tr>
+                <th>Inicio</th>
+                <th>Fim</th>
+                <th>Turma</th>
+                <th>Instrutor</th>
+                <th>Unidade Curricular</th>
+                <th>Ambiente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        // Dados da tabela
+        const dados = [
+            { inicio: '13:00', fim: '17:00', turma: 'EMP-ELV-03', instrutor: 'DEIVID LEMOS', unidade: 'ELET. VEICULAR', ambiente: 'SALA-3004' },
+            { inicio: '13:00', fim: '17:00', turma: 'UMO-MBMM-05', instrutor: 'FABRICIO PLASTER', unidade: 'MECÂ. MOTOCICLETAS', ambiente: 'EXTERNO' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIT-MEC-22', instrutor: 'ADEMIR PIN', unidade: 'MANU. INDUSTRIAL', ambiente: 'LAB-3010' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIT-ATI-5', instrutor: 'ALVIMAR VENTUROTI', unidade: 'TECN. 4.0', ambiente: 'SALA-5103' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIT-MEC-23', instrutor: 'CAMILA SOARES', unidade: 'HIDR. ELETROHIDRÁULICA', ambiente: 'SALA-3006' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIB-ELM-7', instrutor: 'DOUGLAS LIMA', unidade: 'ACIO. AUTOMATIZADO', ambiente: 'SALA-3007' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIT-ATI-6', instrutor: 'EDUARDO SILVA', unidade: 'ACIO. ELETROELETRÔNICOS', ambiente: 'LAB-5022' },
+            { inicio: '13:30', fim: '17:30', turma: 'HTC-DDS-3-18', instrutor: 'GREGORY SILVA', unidade: 'DESE. SISTEMAS', ambiente: 'LAB-5108' },
+            { inicio: '13:30', fim: '17:30', turma: 'HTC-ATI-2-47', instrutor: 'HEISTHEN SCARPARO', unidade: 'INST. ANALÍTICA', ambiente: 'LAB-5116' },
+            { inicio: '13:30', fim: '17:30', turma: 'HTC-ELETR-2-02', instrutor: 'JOAO JULIATTI', unidade: 'INST. INDUSTRIAIS', ambiente: 'SALA-5107' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIB-ADM-36', instrutor: 'LUIZ CASTELO', unidade: 'GEST. ORGANIZACIONAL', ambiente: 'SALA-5103' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIT-ELT-13', instrutor: 'MARCOS ALVES', unidade: 'PROJ. POTÊNCIA', ambiente: 'LAB-4003' },
+            { inicio: '13:30', fim: '17:30', turma: 'EMP-PWEB-04', instrutor: 'PIETRA MEDEIROS', unidade: 'PROG. WEB', ambiente: 'LAB-5109' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIT-DDS-5', instrutor: 'RAMON NASCIMENTO', unidade: 'DESE. SISTEMAS', ambiente: 'LAB-5106' },
+            { inicio: '13:30', fim: '17:30', turma: 'AIT-ELT-14', instrutor: 'SAMUEL MADEIRA', unidade: 'GEST. MANUTENÇÃO', ambiente: 'SALA-4007' },
+            { inicio: '13:30', fim: '17:30', turma: 'HTC-ELT-2-60', instrutor: 'SANDRO SILVA', unidade: 'INST. INDUSTRIAIS', ambiente: 'SALA-5111' }
+        ];
+
+        // Função para criar a tabela
+        function criarTabela() {
+            const tabela = document.getElementById('tabela-horarios').getElementsByTagName('tbody')[0];
+            
+            dados.forEach(dado => {
+                const tr = document.createElement('tr');
+                
+                Object.values(dado).forEach(valor => {
+                    const td = document.createElement('td');
+                    td.textContent = valor;
+                    tr.appendChild(td);
+                });
+
+                tabela.appendChild(tr);
+            });
+        }
+
+        // Criar a tabela ao carregar a página
+        document.addEventListener('DOMContentLoaded', criarTabela);
+    </script>
+</body>
+</html>
